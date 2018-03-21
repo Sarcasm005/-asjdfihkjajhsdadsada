@@ -87,7 +87,7 @@ class Keyboard:
         return contacts_markup
         #self.bot.send_message(message.from_user.id,
         #    "Мы расположены по адресу ...\n наш телефон ...", reply_markup=contacts_markup)
-
+        
 
     def main_menu(self, message):
         user_markup = telebot.types.InlineKeyboardMarkup()
