@@ -65,18 +65,29 @@ def callback_inline(call):
             bot.send_message(call.message.chat.id,
                         text="Fabuloso\nКороткие и средние – 5000 рублей\nДлинные – +30%")
         if call.data == "contacts": #контакты 
-            bot.edit_message_reply_markup(chat_id=call.message.chat.id,
-                        message_id=call.message.message_id, reply_markup = keyboard.contacts(call))
+            bot.edit_message_text(chat_id=call.message.chat.id,
+                        message_id=call.message.message_id, text="Мы расположенны по адресу ...",reply_markup = keyboard.contacts(call))
         if call.data == "staining_cost": #стоимость покраски
-            bot.edit_message_reply_markup(chat_id=call.message.chat.id,
-                        message_id=call.message.message_id, reply_markup = keyboard.technique_staining(call))
+            bot.edit_message_text(chat_id=call.message.chat.id,
+                        message_id=call.message.message_id, text = "Спасибо, теперь выберите, пожалуйста, технику окрашивания или ухода за Вашими волосами:" ,reply_markup = keyboard.technique_staining(call))
         if call.data == "enroll": #записаться
             master_markup = telebot.types.InlineKeyboardMarkup()
+            btn_master = telebot.types.InlineKeyboardButton(text = 'Наш менеджер в Telegram', url = "telegram.me/example")
+            master_markup.add(btn_master)
+            btn_master = telebot.types.InlineKeyboardButton(text = 'Наш менеджер в Instagram', url = "https://Instagram.com/id")
+            master_markup.add(btn_master)
             btn_master = telebot.types.InlineKeyboardButton(text = 'Вернуться в главное меню', callback_data = 'menu')
             master_markup.add(btn_master)
-            bot.edit_message_reply_markup(chat_id=call.message.chat.id, message_id=call.message.message_id, reply_markup = master_markup)
-            bot.send_contact(chat_id=call.message.chat.id, phone_number = "+79823112313",
-                        first_name = "Мастер N")
+            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,text="Записаться можно связавшись с нашим менеджером",reply_markup = master_markup)
+            #bot.send_contact(chat_id=call.message.chat.id, phone_number = "+79823112313",
+            #            first_name = "Мастер N")
+        if call.data == "examples":
+            master_markup = telebot.types.InlineKeyboardMarkup()
+            btn_master = telebot.types.InlineKeyboardButton(text = 'Instagram', url = "https://Instagram.com/id")
+            master_markup.add(btn_master)
+            btn_master = telebot.types.InlineKeyboardButton(text = 'Вернуться в главное меню', callback_data = 'menu')
+            master_markup.add(btn_master)
+            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,text="Посмотреть примеры работ можно в нашем Instagram",reply_markup = master_markup)
         if call.data == "menu": #главное меню
             bot.edit_message_reply_markup(chat_id=call.message.chat.id,
                         message_id=call.message.message_id, reply_markup = keyboard.main_menu(call))
