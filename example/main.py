@@ -27,7 +27,7 @@ def handle_text(message):
     btn_main = telebot.types.InlineKeyboardButton(text = "Контакты",
                                                     callback_data = "contacts")
     user_markup.add(btn_main)
-    bot.send_message(message.from_user.id, 'Выберите пункт меню:', 
+    bot.send_message(message.from_user.id, 'Выберите пункт меню', 
                         reply_markup=user_markup)
 
 #обработчик коллбеков
@@ -35,35 +35,96 @@ def handle_text(message):
 def callback_inline(call):
     if call.message:
         if call.data == "AirTouch":
-            bot.send_message(call.message.chat.id,
-                        text="AirTouch\n20000 – 24000 рублей")
+            #bot.send_message(call.message.chat.id,
+            #            text="AirTouch\n20000 – 24000 рублей")
+            master_markup = telebot.types.InlineKeyboardMarkup()
+            btn_master = telebot.types.InlineKeyboardButton(text = 'Выбрать AirTouch', callback_data = 'accept')
+            master_markup.add(btn_master)
+            btn_master = telebot.types.InlineKeyboardButton(text = 'Вернуться в главное меню', callback_data = 'menu')
+            master_markup.add(btn_master)
+            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,text="AirTouch\n20000 – 24000 рублей",reply_markup = master_markup)
         if call.data == "Балаяж":
-            bot.send_message(call.message.chat.id,
-                        text="Балаяж\nКороткие – 9500 – 10900 рублей\nСредние – 9900 – 11500 рублей\nДлинные – 10900 – 12900 рублей")
+            master_markup = telebot.types.InlineKeyboardMarkup()
+            btn_master = telebot.types.InlineKeyboardButton(text = 'Выбрать Балаяж', callback_data = 'accept')
+            master_markup.add(btn_master)
+            btn_master = telebot.types.InlineKeyboardButton(text = 'Вернуться в главное меню', callback_data = 'menu')
+            master_markup.add(btn_master)
+            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,text="Балаяж\nКороткие – 9500 – 10900 рублей\nСредние – 9900 – 11500 рублей\nДлинные – 10900 – 12900 рублей",reply_markup = master_markup)
+            #bot.send_message(call.message.chat.id,
+            #            text="Балаяж\nКороткие – 9500 – 10900 рублей\nСредние – 9900 – 11500 рублей\nДлинные – 10900 – 12900 рублей")
         if call.data == "Омбрэ":
-            bot.send_message(call.message.chat.id,
-                        text="Омбрэ\nКороткие – 9500 – 10900 рублей\nСредние – 9900 – 11500 рублей\nДлинные – 10900 – 12900 рублей")
+            master_markup = telebot.types.InlineKeyboardMarkup()
+            btn_master = telebot.types.InlineKeyboardButton(text = 'Выбрать Омбрэ', callback_data = 'accept')
+            master_markup.add(btn_master)
+            btn_master = telebot.types.InlineKeyboardButton(text = 'Вернуться в главное меню', callback_data = 'menu')
+            master_markup.add(btn_master)
+            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,text="Омбрэ\nКороткие – 9500 – 10900 рублей\nСредние – 9900 – 11500 рублей\nДлинные – 10900 – 12900 рублей",reply_markup = master_markup)
+            #bot.send_message(call.message.chat.id,
+            #            text="Омбрэ\nКороткие – 9500 – 10900 рублей\nСредние – 9900 – 11500 рублей\nДлинные – 10900 – 12900 рублей")
         if call.data == "Шатуш":
-            bot.send_message(call.message.chat.id,
-                        text="Шатуш\nКороткие – 9500 – 10900 рублей\nСредние – 9900 – 11500 рублей\nДлинные – 10900 – 12900 рублей")
+            master_markup = telebot.types.InlineKeyboardMarkup()
+            btn_master = telebot.types.InlineKeyboardButton(text = 'Выбрать Шатуш', callback_data = 'accept')
+            master_markup.add(btn_master)
+            btn_master = telebot.types.InlineKeyboardButton(text = 'Вернуться в главное меню', callback_data = 'menu')
+            master_markup.add(btn_master)
+            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,text="Шатуш\nКороткие – 9500 – 10900 рублей\nСредние – 9900 – 11500 рублей\nДлинные – 10900 – 12900 рублей",reply_markup = master_markup)
+            #bot.send_message(call.message.chat.id,
+            #            text="Шатуш\nКороткие – 9500 – 10900 рублей\nСредние – 9900 – 11500 рублей\nДлинные – 10900 – 12900 рублей")
         if call.data == "Мелирование":
-            bot.send_message(call.message.chat.id,
-                        text="Мелирование\nКороткие – 9500 – 10900 рублей\nСредние – 9900 – 11500 рублей\nДлинные – 10900 – 12900 рублей")
+            master_markup = telebot.types.InlineKeyboardMarkup()
+            btn_master = telebot.types.InlineKeyboardButton(text = 'Выбрать Мелирование', callback_data = 'accept')
+            master_markup.add(btn_master)
+            btn_master = telebot.types.InlineKeyboardButton(text = 'Вернуться в главное меню', callback_data = 'menu')
+            master_markup.add(btn_master)
+            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,text="Мелирование\nКороткие – 9500 – 10900 рублей\nСредние – 9900 – 11500 рублей\nДлинные – 10900 – 12900 рублей",reply_markup = master_markup)
+            #bot.send_message(call.message.chat.id,
+            #            text="Мелирование\nКороткие – 9500 – 10900 рублей\nСредние – 9900 – 11500 рублей\nДлинные – 10900 – 12900 рублей")
         if call.data == "Растяжка и тонирование":
-            bot.send_message(call.message.chat.id,
-                        text="Растяжка и тонирование\nКороткие – 7000 – 7500 рублей\nСредние – 7000 – 7500 рублей\nДлинные – 7500 – 8900 рублей")
+            master_markup = telebot.types.InlineKeyboardMarkup()
+            btn_master = telebot.types.InlineKeyboardButton(text = 'Выбрать Растяжку и тонирование', callback_data = 'accept')
+            master_markup.add(btn_master)
+            btn_master = telebot.types.InlineKeyboardButton(text = 'Вернуться в главное меню', callback_data = 'menu')
+            master_markup.add(btn_master)
+            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,text="Растяжка и тонирование\nКороткие – 7000 – 7500 рублей\nСредние – 7000 – 7500 рублей\nДлинные – 7500 – 8900 рублей",reply_markup = master_markup)
+            
+            #bot.send_message(call.message.chat.id,
+            #            text="Растяжка и тонирование\nКороткие – 7000 – 7500 рублей\nСредние – 7000 – 7500 рублей\nДлинные – 7500 – 8900 рублей")
         if call.data == "Абсолютное счастье для волос":
-            bot.send_message(call.message.chat.id,
-                        text="Абсолютное счастье для волос\nКороткие – 3000 рублей\nСредние – 4500 рублей\nДлинные – 6000 рублей\nОчень длинные – 7000 рублей")
+            master_markup = telebot.types.InlineKeyboardMarkup()
+            btn_master = telebot.types.InlineKeyboardButton(text = 'Выбрать Абсолютное счастье для волос', callback_data = 'accept')
+            master_markup.add(btn_master)
+            btn_master = telebot.types.InlineKeyboardButton(text = 'Вернуться в главное меню', callback_data = 'menu')
+            master_markup.add(btn_master)
+            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,text="Абсолютное счастье для волос\nКороткие – 3000 рублей\nСредние – 4500 рублей\nДлинные – 6000 рублей\nОчень длинные – 7000 рублей",reply_markup = master_markup)
+            #bot.send_message(call.message.chat.id,
+            #            text="Абсолютное счастье для волос\nКороткие – 3000 рублей\nСредние – 4500 рублей\nДлинные – 6000 рублей\nОчень длинные – 7000 рублей")
         if call.data == "Керопластика Paul Mitchel":
-            bot.send_message(call.message.chat.id,
-                        text="Керопластика Paul Mitchel\nКороткие – 10500 рублей\nСредние – 11500 рублей\nДлинные – 13000 рублей")
+            master_markup = telebot.types.InlineKeyboardMarkup()
+            btn_master = telebot.types.InlineKeyboardButton(text = 'Выбрать Керопластику Paul Mitchel', callback_data = 'accept')
+            master_markup.add(btn_master)
+            btn_master = telebot.types.InlineKeyboardButton(text = 'Вернуться в главное меню', callback_data = 'menu')
+            master_markup.add(btn_master)
+            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,text="Керопластика Paul Mitchel\nКороткие – 10500 рублей\nСредние – 11500 рублей\nДлинные – 13000 рублей",reply_markup = master_markup)
+            #bot.send_message(call.message.chat.id,
+            #            text="Керопластика Paul Mitchel\nКороткие – 10500 рублей\nСредние – 11500 рублей\nДлинные – 13000 рублей")
         if call.data == "Ламинирование":
-            bot.send_message(call.message.chat.id,
-                        text="Ламинирование\nКороткие – 3500 рублей\nСредние – 4500 рублей\nДлинные – 5500 рублей")
+            master_markup = telebot.types.InlineKeyboardMarkup()
+            btn_master = telebot.types.InlineKeyboardButton(text = 'Выбрать Ламинирование', callback_data = 'accept')
+            master_markup.add(btn_master)
+            btn_master = telebot.types.InlineKeyboardButton(text = 'Вернуться в главное меню', callback_data = 'menu')
+            master_markup.add(btn_master)
+            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,text="Ламинирование\nКороткие – 3500 рублей\nСредние – 4500 рублей\nДлинные – 5500 рублей",reply_markup = master_markup)
+            #bot.send_message(call.message.chat.id,
+            #            text="Ламинирование\nКороткие – 3500 рублей\nСредние – 4500 рублей\nДлинные – 5500 рублей")
         if call.data == "Fabuloso":
-            bot.send_message(call.message.chat.id,
-                        text="Fabuloso\nКороткие и средние – 5000 рублей\nДлинные – +30%")
+            master_markup = telebot.types.InlineKeyboardMarkup()
+            btn_master = telebot.types.InlineKeyboardButton(text = 'Выбрать Fabuloso', callback_data = 'accept')
+            master_markup.add(btn_master)
+            btn_master = telebot.types.InlineKeyboardButton(text = 'Вернуться в главное меню', callback_data = 'menu')
+            master_markup.add(btn_master)
+            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,text="Fabuloso\nКороткие и средние – 5000 рублей\nДлинные – +30%",reply_markup = master_markup)
+            #bot.send_message(call.message.chat.id,
+            #            text="Fabuloso\nКороткие и средние – 5000 рублей\nДлинные – +30%")
         if call.data == "contacts": #контакты 
             bot.edit_message_text(chat_id=call.message.chat.id,
                         message_id=call.message.message_id, text="Мы расположенны по адресу ...",reply_markup = keyboard.contacts(call))
@@ -89,8 +150,32 @@ def callback_inline(call):
             master_markup.add(btn_master)
             bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,text="Посмотреть примеры работ можно в нашем Instagram",reply_markup = master_markup)
         if call.data == "menu": #главное меню
-            bot.edit_message_reply_markup(chat_id=call.message.chat.id,
-                        message_id=call.message.message_id, reply_markup = keyboard.main_menu(call))
+            bot.edit_message_text(chat_id=call.message.chat.id,
+                        message_id=call.message.message_id,text = "Выберите пункт меню", reply_markup = keyboard.main_menu(call))
+        if call.data == "accept": #главное меню
+            bot.edit_message_text(chat_id=call.message.chat.id,
+                        message_id=call.message.message_id, text = "Выберите длину волос" , reply_markup = keyboard.hair_length(call))
+            #bot.answer_callback_query()
+
+        if call.data == "short": #главное меню
+            bot.edit_message_text(chat_id=call.message.chat.id,
+                        message_id=call.message.message_id, text = "Выберите категорию мастера" , reply_markup = keyboard.master_category(call))
+        if call.data == "middle": #главное меню
+            bot.edit_message_text(chat_id=call.message.chat.id,
+                        message_id=call.message.message_id, text = "Выберите категорию мастера", reply_markup = keyboard.master_category(call))
+        if call.data == "long": #главное меню
+            bot.edit_message_text(chat_id=call.message.chat.id,
+                        message_id=call.message.message_id, text = "Выберите категорию мастера", reply_markup = keyboard.master_category(call))
+        if call.data == "leaders": #главное меню
+            master_markup = telebot.types.InlineKeyboardMarkup()
+            btn_master = telebot.types.InlineKeyboardButton(text = 'Вернуться в главное меню', callback_data = 'menu')
+            master_markup.add(btn_master)
+            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,text="Стоимость услуг : ",reply_markup = master_markup)
+        if call.data == "masters": #главное меню
+            master_markup = telebot.types.InlineKeyboardMarkup()
+            btn_master = telebot.types.InlineKeyboardButton(text = 'Вернуться в главное меню', callback_data = 'menu')
+            master_markup.add(btn_master)
+            bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id,text="Стоимость услуг : ",reply_markup = master_markup)
 
 if __name__ == "__main__":
     bot.polling(none_stop=True)
