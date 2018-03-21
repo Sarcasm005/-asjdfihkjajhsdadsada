@@ -77,7 +77,7 @@ class Keyboard:
                                 url = 'https://vk.com/id')
         contacts_markup.add(btn_contacts)
         btn_contacts = telebot.types.InlineKeyboardButton(text = 'Instagram',
-                                url = 'https://vk.com/id')
+                                url = 'https://Instagram.com/id')
         contacts_markup.add(btn_contacts)
         btn_contacts = telebot.types.InlineKeyboardButton(text = 'Наш сайт',
                                 url = 'https://yandex.com')
